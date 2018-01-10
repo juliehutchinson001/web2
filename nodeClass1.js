@@ -50,7 +50,6 @@ let fContent = fs.readFile(process.argv[2], 'utf-8', function(err, data) {
 });
 
 ----------------------------------------------------------------------------------
-*/
 
 //Challenge 5
 
@@ -79,28 +78,39 @@ fs.readdir(folderName, function(err, lFileNames) {
             console.log(lFileNames[iterate]);
         }
     }
-
+    
 });
 
+------------------------------------------------------------------------
 
+Challenge 6
 
+//Todo: Create two files
+//Todo: module create a function that handles the reading of the fileNames
+module.exports = function aFilter(dirName, fNameExt, userFunction) {
+    let fs = require('fs');
+    let path = require('path');
+    
+    fs.readdir(dirName, function(err, lFileNames) {
+        if (err) {
+            return userFunction(err, null);
+        }
+        
+        let filteredArr = [];
+        
+        for (iterate = 0; iterate < lFileNames.length; iterate++) {
+            let file = lFileNames[iterate];
+            let fileExtension = path.extname(file);
+            
+            if (fileExtension.slice(1) === fNameExt) {
+                filteredArr.push(file);
+            }
+        }
+        return userFunction(null, filteredArr);
+    });
+}
 
+-------------------------------------------------------------------
+*/
 
-
-
-
-
-
-
-// fs another file
-
-// function readdir(folderName, callback) {
-//     // code
-//     if (err) {
-//         callback(err, null)
-//     } else {
-//         // code to get the file names
-//         let fileNames = ['somefile.js', 'another.txt', 'onemore.py']
-//         callback(null, filenames)
-//     }
-// }
+//Challenge 7
