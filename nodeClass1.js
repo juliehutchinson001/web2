@@ -114,3 +114,20 @@ module.exports = function aFilter(dirName, fNameExt, userFunction) {
 */
 
 //Challenge 7
+
+//requesting the http module
+let http = require('http');
+//requesting the url
+let urlToGet = process.argv[2];
+
+//method to make the GET requests
+http.get(urlToGet, function callback(response) {
+
+    //manage the response event handlers
+    response.on('data', console.log)
+    response.on('error', console.error)
+
+    //set the encoding method to emit Strings instead of Node Buffer objects
+    response.setEncoding('utf-8');
+
+});
