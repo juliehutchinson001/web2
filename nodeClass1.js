@@ -20,3 +20,19 @@ console.log(b(process.argv));
 */
 
 // Challenge 3
+//import the file module
+let fs = require('fs');
+//read the content of the file, encode it --to avoid using method toString--
+let fContent = fs.readFileSync(process.argv[2], 'utf-8');
+//identify the newlines and split them as an array, with \n as the 'delimiter'
+let fContentArray = fContent.split('\n');
+//print out the length of the array - 1 to count the # of new lines
+console.log(fContentArray.length - 1);
+
+
+
+/*`hello\n 
+julie\n
+hutchinson`
+
+['hello', 'julie', 'hutchinson'] - 1 */
