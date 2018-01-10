@@ -53,3 +53,54 @@ let fContent = fs.readFile(process.argv[2], 'utf-8', function(err, data) {
 */
 
 //Challenge 5
+
+let fs = require('fs');
+
+// node(0) nodeClass1.js(1) someFolderName(2) js(3)
+
+let folderName = process.argv[2];
+let fExtension = process.argv[3]
+
+let path = require('path');
+
+//node fileName folderName js 
+
+// path.extname('name of the file in string format').slice(2)
+
+fs.readdir(folderName, function(err, lFileNames) {
+    if (err) {
+        return console.log(err);
+    }
+    // step1) iterate through lFileNames
+    for (let iterate = 0; iterate < lFileNames.length; iterate++) {
+        // step2) check if the file has the same extension as fExtension
+        if (path.extname(lFileNames[iterate]) === "." + fExtension) {
+            // step3) if it does print it
+            console.log(lFileNames[iterate]);
+        }
+    }
+
+});
+
+
+
+
+
+
+
+
+
+
+
+// fs another file
+
+// function readdir(folderName, callback) {
+//     // code
+//     if (err) {
+//         callback(err, null)
+//     } else {
+//         // code to get the file names
+//         let fileNames = ['somefile.js', 'another.txt', 'onemore.py']
+//         callback(null, filenames)
+//     }
+// }
