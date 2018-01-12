@@ -132,25 +132,64 @@ http.get(urlToGet, function callback(response) {
 });
 
 ---------------------------------------------------------------------------
-*/
-// Challenge 8
+Challenge 8
 
+//Request the http module
 let http = require("http");
+//Acquire the url
 let urlNeeded = process.argv[2];
 
-
+//get request is initialized, the url is passed and an annonimous func for the response
 http.get(urlNeeded, response => {
-
+    
+    
     let body = "";
     response.on("data", data => {
         body += data.toString();
     });
-
+    
     response.on("end", () => {
         console.log(body.length);
         console.log(body);
     })
-
+    
 });
 
 //function name(argument)
+
+------------------------------------------
+*/
+
+//Challenge 9 
+
+let http = require('http');
+
+let urls = process.argv.slice(2);
+let results = []; // Array(3)
+
+// initialise results array
+// 
+
+let
+
+for (let i = 0; i < urls.length; i++) {
+    (function(i) {
+        http.get(urls[i], function(request) {
+            let result = "";
+            request.setEncoding("utf8");
+            request.on("data", function(data) {
+                result += data;
+            });
+            request.on("end", function() {
+                results[i] = result;
+                let resultCount = 0;
+                for (let j = 0; j < results.length; j++) {
+                    if (results[j] != null) resultCount++;
+                }
+                if (resultCount === results.length) {
+                    for (j = 0; j < results.length; j++) console.log(results[j]);
+                }
+            });
+        });
+    })(i);
+}
