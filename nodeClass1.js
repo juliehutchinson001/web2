@@ -165,29 +165,39 @@ http.get(urlNeeded, response => {
 let http = require('http');
 
 let urls = process.argv.slice(2);
-let results = []; // Array(3)
+let results = []; // Array(3 urls)
 
-// initialise results array
-// 
+// initialise results array (3 empty positions)
+for (let index = 0; index < urls.length; index++) {
+    results[index] = null;
+}
 
-let
-
+//looping the urls and passing an index to id the different urls
 for (let i = 0; i < urls.length; i++) {
     (function(i) {
+        //http request with each url indexed
         http.get(urls[i], function(request) {
-            let result = "";
+            //create a variable body to the content
+            let body = "";
+            //convert to string the data entering
             request.setEncoding("utf8");
+            //passing of the data begings
             request.on("data", function(data) {
-                result += data;
+                body += data;
             });
+            //end of the data being passed
             request.on("end", function() {
-                results[i] = result;
+                results[i] = body;
                 let resultCount = 0;
+                //loop that verifies the length --complete data-- of each url
                 for (let j = 0; j < results.length; j++) {
                     if (results[j] != null) resultCount++;
                 }
+                //print the result in the order received
                 if (resultCount === results.length) {
-                    for (j = 0; j < results.length; j++) console.log(results[j]);
+                    for (j = 0; j < results.length; j++) {
+                        console.log(results[j]);
+                    }
                 }
             });
         });
