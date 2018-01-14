@@ -1,22 +1,32 @@
+/*
+model cart as:
+. as an object (key value pairs)
+items = {1: {name: shirt, id: 1, price: 20}, item2.id: item2, item3.id: item3....}
+*/
 let shoppingCart = {
     cart: {},
 
+    //add one item to the cart
     addOneItem(item) {
         this.cart[item.id] = item;
     },
 
+    //remove one item from the cart
     removeOneItem(item) {
         delete this.cart[item.id];
     },
 
+    //get a collection of items in the cart
     getItemCollection() {
         return Object.values(this.cart);
     },
 
+    //add one item to cart
     increaseItem(item) {
         item.quantity += 1;
     },
 
+    //remove one item from the cart
     decreaseItem(item) {
         if (item.quantity - 1 < 1) {
             this.removeOneItem(item);
@@ -25,6 +35,7 @@ let shoppingCart = {
         }
     },
 
+    //return total number of items in cart
     totalQuantityItems() {
         let allItems = getItemCollection();
         let totalQuantity = 0;
@@ -35,6 +46,7 @@ let shoppingCart = {
         return totalQuantity;
     },
 
+    //return total cost of all items in cart
     totalCostItems() {
         let allItems = getItemCollection();
         let totalPrice = 0;
@@ -43,8 +55,9 @@ let shoppingCart = {
         }
         return totalPrice;
     }
-}
+};
 
+//my item class
 class Products {
     constructor(name, id, price) {
         this.name = name;
