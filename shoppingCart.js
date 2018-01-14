@@ -35,38 +35,28 @@ let shoppingCart = {
         }
     },
 
-    //return total number of items in cart
-    totalQuantityItems() {
+    //refactor total quantities and total
+    getTotal(totalProperty) {
         let allItems = getItemCollection();
-        let totalQuantity = 0;
-        for (item of allItems) {
-            totalQuantity += item.quantity;
+        let total = 0;
+        for (item of totalProperty) {
+            total += item.totalProperty;
         }
 
-        return totalQuantity;
+        return total;
+    },
+
+    //return total number of items in cart
+    totalQuantityItems() {
+        return getTotal(item.quantity);
     },
 
     //return total cost of all items in cart
     totalCostItems() {
-        let allItems = getItemCollection();
-        let totalPrice = 0;
-        for (item of allItems) {
-            totalPrice += item.price;
-        }
-        return totalPrice;
-    }
-};
-
-//my item class
-class Products {
-    constructor(name, id, price) {
-        this.name = name;
-        this.id = id;
-        this.quantity = 1;
-        this.price = price * this.quantity;
-
+        return getTotal(item.price);
     }
 }
+
 /*
 
 two different ways to model data:
