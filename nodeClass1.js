@@ -157,7 +157,7 @@ http.get(urlNeeded, response => {
 
 //function name(argument)
 
-------------------------------------------
+-----------------------------------------------------------------
 
 //Challenge 9 
 
@@ -203,8 +203,7 @@ for (let i = 0; i < urls.length; i++) {
     })(i);
 }
 
-------------------------------------------
-*/
+------------------------------------------------------------------------------------
 
 //Challenge 10: Time Server
 
@@ -212,17 +211,37 @@ let port = process.argv[2];
 
 let net = require('net')
 
-function serverDate(newFormat) { return newFormat < 10 ? '0' + newFormat : newFormat }
+function serverDate(month) { return month < 10 ? '0' + month : month }
 
 let server = net.createServer(function(socket) {
     // socket handling logic
     let formatedDate = new Date();
     let socketServer = formatedDate.getFullYear() + "-" +
-        serverDate(formatedDate.getMonth() + 1) + "-" +
-        serverDate(formatedDate.getDate()) + " " +
-        serverDate(formatedDate.getHours()) + ":" +
-        serverDate(formatedDate.getMinutes()) + "\n";
+    serverDate(formatedDate.getMonth() + 1) + "-" +
+    serverDate(formatedDate.getDate()) + " " +
+    serverDate(formatedDate.getHours()) + ":" +
+    serverDate(formatedDate.getMinutes()) + "\n";
     socket.end(socketServer);
 });
 
 server.listen(port);
+
+------------------------------------------------------------------------------------
+*/
+
+//Challenge 11: HTTP File Server
+
+//import http module
+let http = require('http');
+let fs = require('fs');
+
+//get port number from the command line
+let portNumber = process.argv[2];
+
+//get file from the command line
+let aNewFile = process.argv[3];
+
+http.createServer(function(req, res) {
+    res.writeHead(200, { 'content-type': 'text/plain' });
+    fs.createReadStream(aNewFile).pipe(res);
+}).listen(portNumber);
