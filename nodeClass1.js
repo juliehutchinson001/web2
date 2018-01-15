@@ -158,7 +158,6 @@ http.get(urlNeeded, response => {
 //function name(argument)
 
 ------------------------------------------
-*/
 
 //Challenge 9 
 
@@ -203,3 +202,27 @@ for (let i = 0; i < urls.length; i++) {
         });
     })(i);
 }
+
+------------------------------------------
+*/
+
+//Challenge 10: Time Server
+
+let port = process.argv[2];
+
+let net = require('net')
+
+function pad(newFormat) { return newFormat < 10 ? '0' + newFormat : newFormat }
+
+let server = net.createServer(function(socket) {
+    // socket handling logic
+    let formatedDate = new Date();
+    let s = formatedDate.getFullYear() + "-" +
+        pad(formatedDate.getMonth() + 1) + "-" +
+        pad(formatedDate.getDate()) + " " +
+        pad(formatedDate.getHours()) + ":" +
+        pad(formatedDate.getMinutes()) + "\n";
+    socket.end(s);
+});
+
+server.listen(port);
