@@ -227,7 +227,6 @@ let server = net.createServer(function(socket) {
 server.listen(port);
 
 ------------------------------------------------------------------------------------
-*/
 
 //Challenge 11: HTTP File Server
 
@@ -245,3 +244,21 @@ http.createServer(function(req, res) {
     res.writeHead(200, { 'content-type': 'text/plain' });
     fs.createReadStream(aNewFile).pipe(res);
 }).listen(portNumber);
+------------------------------------------------------------------------------------
+*/
+
+//Challenge 12: HTTP Uppercaserer
+
+//import http module
+let http = require('http');
+let portNumber = process.argv[2];
+map = require('through2-map');
+
+var httpServer = http.createServer(function(request, response) {
+    if (request.method === 'POST') {
+        request.pipe(map(function(chunk) {
+            return chunk.toString().toUpperCase();
+        })).pipe(response);
+    }
+});
+httpServer.listen(portNumber);
