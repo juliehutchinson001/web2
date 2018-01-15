@@ -57,6 +57,15 @@ let shoppingCart = {
     }
 }
 
+class ItemsCart {
+    constructor(name, id, price) {
+        this.name = name;
+        this.id = id;
+        this.quantity = quantity;
+        this.price = price;
+    }
+}
+
 /*
 
 two different ways to model data:
