@@ -40,5 +40,26 @@ asyncAction(5000, 'julie', function(name) {
 
 //-------------------------------------------------------------
 var p = new Promise(function(resolve, reject) {
-
+    setTimeout(function() {
+        // resolve('Success!');
+        reject('Error: promise rejected');
+    }, 4000);
 });
+
+// p.then(function() {}).catch(function() {});
+
+//The 
+p.then(function(message) {
+    console.log('Promise resolved successfully!');
+    console.log(message);
+
+}).catch(function(err) {
+    console.log('Promise rejected');
+    console.log(err);
+});
+
+// Problems to solve
+// 1) What happens when a promise is rejected?
+// 2) What happens when you call both resolve and reject? 
+// Does the order matter? 
+// --------------------------------------------
