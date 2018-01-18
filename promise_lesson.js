@@ -138,3 +138,24 @@ greet("123").then((str) => {
 // Call this method spacer(str). It should run async so use a
 // setTimeout() and return a Promise. 
 // 4) Last call spacer() after you call greeter() and uppercaser()
+
+
+function spaceName(name) {
+    return new Promise(function(resolve, reject) {
+        setTimeout(function() {
+            if (typeof name === 'string') {
+                // add spaces here...
+                for (var char of str) {
+                    console.log(123);
+                    resolve(char + " ");
+                }
+            } else {
+                reject('Name must be a string!');
+            }
+        }, 1233);
+    });
+}
+
+spaceName('Julie').then((str) => {
+    console.log('str: ' + str);
+});
