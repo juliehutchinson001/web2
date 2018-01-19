@@ -1,5 +1,5 @@
 {
-    "name": "Reddit Clone",
+    "name": "reddit_clone",
     "version": "1.0.0",
     "description": "Clone of the Reddit website",
     "main": "server.js",
@@ -7,5 +7,8 @@
         "test": "echo \"Error: no test specified\" && exit 1"
     },
     "author": "Julie Hutchinson",
-    "license": "ISC"
+    "license": "ISC",
+    "dependencies": {
+        "express": "^4.16.2"
+    }
 }
