@@ -10,14 +10,9 @@ app.use(express.static("public"));
 
 app.use(bodyPser.urlencoded({ extended: true }));
 
-app.get("/posts", (req, res) => {
-    res.render("home", { pageTitle: 'Home Page' });
-});
+require('./controllers/home')(app)
 
-app.get("/posts/new", (req, res) => {
-    res.render("new_form", { pageTitle: 'Home Page' });
-})
-
+require('./controllers/post_new')(app)
 
 app.listen("3000", () => {
     console.log("listening on port 3000");
