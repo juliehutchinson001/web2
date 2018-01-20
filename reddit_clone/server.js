@@ -10,9 +10,14 @@ app.use(express.static("public"));
 
 app.use(bodyPser.urlencoded({ extended: true }));
 
-app.get("/", (req, res) => {
-    res.send("<h1>Hello</h1>");
+app.get("/posts", (req, res) => {
+    res.render("home", { pageTitle: 'Home Page' });
 });
+
+app.get("/posts/new", (req, res) => {
+    res.render("new_form", { pageTitle: 'Home Page' });
+})
+
 
 app.listen("3000", () => {
     console.log("listening on port 3000");
