@@ -12,6 +12,7 @@ const PostSchema = new Schema({
     updatedAt: { type: Date },
     title: { type: String, required: true },
     url: { type: String, required: true },
+    // _creator: { type: Schema.ObjectId, ref: 'User', required: true },
     summary: { type: String, required: true }
 })
 

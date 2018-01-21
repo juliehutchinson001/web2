@@ -6,8 +6,10 @@
                 <ul>
                     <% for (post of posts) { %>
                     <li class="list-group-item">
-                        <div class="lead"><%= post.title %></div>
-                        <a href="<%= post.url %>" target="_blank"><%= post.url %><a>
+                        <div class="lead">
+                            <a href="<%= /posts/:id %>" target="_blank"><%= post.url %><a><%= post.title %>
+                            <p><%= post.summary %></p>
+                        </div>
                     </li>
                     <% } %>
                 </ul>

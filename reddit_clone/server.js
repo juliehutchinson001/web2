@@ -24,6 +24,8 @@ require('./controllers/post_new')(app);
 
 require('./controllers/posts')(app);
 
+require('./controllers/show')(app);
+
 app.listen("3000", () => {
     console.log("listening on port 3000");
 });
