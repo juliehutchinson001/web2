@@ -145,10 +145,7 @@ function spaceName(name) {
         setTimeout(function() {
             if (typeof name === 'string') {
                 // add spaces here...
-                for (var char of str) {
-                    console.log(123);
-                    resolve(char + " ");
-                }
+                resolve(" ".join(name.split("")));
             } else {
                 reject('Name must be a string!');
             }
