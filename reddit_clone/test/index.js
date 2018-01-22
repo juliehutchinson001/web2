@@ -5,7 +5,7 @@ const should = chai.should()
 chai.use(chaiHttp)
 
 describe('site', () => {
-    it('Should have home page', (done) => { // Describe what should happen
+    it('Should have home page', (done) => {
         // In this case we test that the home page loads
         chai.request('localhost:3000')
             .get('/posts')

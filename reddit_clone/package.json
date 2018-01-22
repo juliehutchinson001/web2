@@ -1,31 +1,31 @@
 {
-  "name": "reddit_clone",
-  "version": "1.0.0",
-  "description": "Clone of Reddit Website",
-  "main": "server.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/juliehutchinson001/web2.git"
-  },
-  "author": "Julie Hutchinson",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/juliehutchinson001/web2/issues"
-  },
-  "homepage": "https://github.com/juliehutchinson001/web2#readme",
-  "dependencies": {
-    "body-parser": "^1.18.2",
-    "ejs": "^2.5.7",
-    "express": "^4.16.2",
-    "mongoose": "^5.0.1",
-    "nodemon": "^1.14.11"
-  },
-  "devDependencies": {
-    "chai": "^4.1.2",
-    "chai-http": "^3.0.0",
-    "mocha": "^5.0.0"
-  }
+    "name": "reddit_clone",
+    "version": "1.0.0",
+    "description": "Clone of Reddit Website",
+    "main": "server.js",
+    "scripts": {
+        "test": "mocha"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/juliehutchinson001/web2.git"
+    },
+    "author": "Julie Hutchinson",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/juliehutchinson001/web2/issues"
+    },
+    "homepage": "https://github.com/juliehutchinson001/web2#readme",
+    "dependencies": {
+        "body-parser": "^1.18.2",
+        "ejs": "^2.5.7",
+        "express": "^4.16.2",
+        "mongoose": "^5.0.1",
+        "nodemon": "^1.14.11"
+    },
+    "devDependencies": {
+        "chai": "^4.1.2",
+        "chai-http": "^3.0.0",
+        "mocha": "^5.0.0"
+    }
 }
