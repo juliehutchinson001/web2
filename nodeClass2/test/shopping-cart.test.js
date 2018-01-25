@@ -52,4 +52,27 @@ describe('testing Shopping Cart items', () => {
         expect(cart2.length).to.equal(cart.length + 1);
     });
 
+    it('Should return the number of items in the cart');
+    it('Should remove items from cart');
+    // Stretch challenges
+    it('Should update the count of items in the cart');
+    it('Should remove an item when its count is 0');
+    it('Should return the total cost of all items in the cart');
 })
+
+describe('testing posts', () => {
+    beforeEach(() => {
+        console.log('===========================');
+    })
+    it('should fetch an array of posts', () => {
+
+    });
+    it('should add a post');
+    it('should remove a post');
+});
+
+describe('testing users', () => {
+    it('should fetch an array of users');
+    it('should add a user');
+    it('should remove a user');
+});
