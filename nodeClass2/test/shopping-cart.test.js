@@ -43,4 +43,13 @@ describe('testing Shopping Cart items', () => {
         expect(cart).to.have.lengthOf(1);
     });
 
+    it('Should add a new item to the shopping cart', () => {
+        const cart = getCart();
+        addItem("apple", 5)
+        const cart2 = getCart()
+
+        expect(cart2).to.have.lengthOf(cart.length + 1);
+        expect(cart2.length).to.equal(cart.length + 1);
+    });
+
 })
