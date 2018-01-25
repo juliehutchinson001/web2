@@ -21,3 +21,18 @@ after(() => {
     console.log("<<<<<<<<<<<<<<<<<<<<<<<<<<");
     // return testPost.remove();
 });
+
+describe('testing Shopping Cart items', () => {
+    beforeEach(() => {
+        console.log('........................');
+    })
+
+    it('Should create a new Item with name and price', () => {
+        const item = new Item('Apple', 1.99)
+        expect(item.name).to.be.a('string');
+        expect(item.price).to.be.a('number');
+        expect(item.name).to.be.equal("Apple")
+        expect(item.price).to.be.equal(1.99)
+    });
+
+})
