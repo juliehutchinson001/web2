@@ -35,4 +35,12 @@ describe('testing Shopping Cart items', () => {
         expect(item.price).to.be.equal(1.99)
     });
 
+    it('Should return an array containing all items in cart', () => {
+        const cart = getCart();
+        expect(cart).to.be.a('array');
+        expect(cart).to.have.lengthOf(0);
+        cart.push('A');
+        expect(cart).to.have.lengthOf(1);
+    });
+
 })
