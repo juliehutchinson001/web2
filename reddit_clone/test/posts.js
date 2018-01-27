@@ -18,9 +18,9 @@ describe('Posts', function() {
             }
             chai.request('localhost:3000')
             chai.post('/posts', head)
-            chai.end(function(error, res) {
+            chai.end(function(res) {
                 //console.log('success')
             })
-        }).catch((error) => done(error))
+        }).catch(function(error) { done(error) })
     });
 })
