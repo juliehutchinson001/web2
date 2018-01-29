@@ -80,15 +80,17 @@ describe('ShoppingCart', function() {
         assert.equal(cart.totalQuantityItems(), 0);
     });
 
+    it('assert the total cost of all items in the cart', function() {
+        assert.equal(cart.totalCostItems(), 0);
 
+        cart.addOneItem(item);
+        assert.equal(cart.totalCostItems(), 10);
+
+        cart.addOneItem(anotherItem);
+        assert.equal(cart.totalCostItems(), 13);
+    });
 
 })
-
-
-
-
-
-
 
 
 
