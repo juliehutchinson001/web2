@@ -18,10 +18,21 @@ describe('ItemsCart', function() {
         assert.equal(item.name, 'lettuce');
     })
 
-    it('assert an item has a price', () => {
+    it('assert an item has a price', function() {
         assert.typeOf(item.price, 'number');
         assert.equal(item.price, 10);
     })
+})
+
+describe('ShoppingCart', function() {
+    it('assert that function to remove items from cart works', function() {
+        cart.addOneItem(item);
+        assert(cart.totalQuantityItems()).to.equal(1);
+        cart.removeOneItem(item)
+        assert(cart.totalQuantityItems()).to.equal(0);
+    });
+
+
 })
 
 
