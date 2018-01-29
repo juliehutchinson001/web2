@@ -10,9 +10,12 @@ let mongoose = require('mongoose');
 
 let app = express();
 
-app.use('/posts', routes);
+// app.use('/posts', routes);
 
-mongoose.connect('mongodb://localhost/27017');
+mongoose.connect('mongodb://localhost/27017', function() {
+    console.log("connected to mongodb...");
+});
+
 mongoose.set('debug', true);
 mongoose.connection.on('error', console.error.bind(console, 'MongoDB connection Error:'))
 
