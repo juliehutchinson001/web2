@@ -17,7 +17,13 @@ describe('ItemsCart', function() {
         assert.typeOf(item.name, 'string');
         assert.equal(item.name, 'lettuce');
     })
+
+    it('should have a price', () => {
+        assert.typeOf(item.price, 'number');
+        assert.equal(item.price, 10);
+    })
 })
+
 
 
 
