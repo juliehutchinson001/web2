@@ -25,7 +25,7 @@ describe('ItemsCart', function() {
 })
 
 describe('ShoppingCart', function() {
-    it('assert that function to remove items from cart works', function() {
+    it('assert that function removes items from cart works', function() {
         cart.addOneItem(item);
         assert.equal(cart.totalQuantityItems(), 1);
         cart.removeOneItem(item)
@@ -35,6 +35,12 @@ describe('ShoppingCart', function() {
     it('assert that an array containing all items in cart is returned', function() {
         assert.typeOf(cart.getItemCollection(), 'array');
     })
+
+    it('assert addition of new item to the shopping cart', function() {
+        cart.addOneItem(item);
+        const currentItems = cart.getItemCollection()[0]
+        assert.equal(currentItems.name, 'lettuce');
+    });
 
 
 
