@@ -6,12 +6,18 @@ let item;
 let cart;
 let anotherItem;
 
-beforeEach(() => {
+beforeEach(function() {
     item = new ItemsCart('lettuce', 2, 001);
     cart = new ShoppingCart();
     anotherItem = new ItemsCart('apple', 1, 015);
 })
 
+describe('ItemsCart', function() {
+    it('assert that an item has a name', () => {
+        assert.typeOf(item.name, 'string');
+        assert.equal(item.name, 'lettuce');
+    })
+})
 
 
 
