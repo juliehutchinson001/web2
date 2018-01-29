@@ -1,3 +1,4 @@
+/*
 const mocha = require('mocha')
     // const chai = require('chai').
 const expect = require('chai').expect
@@ -76,3 +77,5 @@ describe('testing users', () => {
     it('should add a user');
     it('should remove a user');
 });
+
+*/

@@ -136,7 +136,7 @@ items = {1: {name: shirt, id: 1, price: 20}, item2.id: item2, item3.id: item3...
 
 Differences between dictionaries in python and javascript
 python
-dictionary = { 'name': 'juan', 'age': 27 }
+dictionary = { 'name': 'julie', 'age': 27 }
 dictionary.age += 1
 
 class Human:
@@ -147,12 +147,12 @@ self.age = age
 def birthday(self):
     return self.age += 1
 
-juan = Human('juan', 27)
-juan.birthday()
+julie = Human('julie', 27)
+julie.birthday()
 
 // javascript
-let juan = {
-    name: 'juan',
+let julie = {
+    name: 'julie',
     age: 27,
 
     birthday() {
@@ -160,7 +160,7 @@ let juan = {
     }
 }
 
-console.log(juan)
-juan.birthday()
-console.log(juan.age)
+console.log(julie)
+julie.birthday()
+console.log(julie.age)
 */
