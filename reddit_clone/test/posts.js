@@ -3,7 +3,8 @@ const chaiHttp = require('chai-http');
 let expect = chai.expect;
 
 chai.use(chaiHttp);
-const Post = require('../models/post.js');
+
+const Post = require('../server/models/post');
 
 describe('Posts', function() {
     let beforeCountr;
