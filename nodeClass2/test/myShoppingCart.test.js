@@ -27,10 +27,15 @@ describe('ItemsCart', function() {
 describe('ShoppingCart', function() {
     it('assert that function to remove items from cart works', function() {
         cart.addOneItem(item);
-        assert(cart.totalQuantityItems()).to.equal(1);
+        assert.equal(cart.totalQuantityItems(), 1);
         cart.removeOneItem(item)
-        assert(cart.totalQuantityItems()).to.equal(0);
+        assert.equal(cart.totalQuantityItems(), 0);
     });
+
+    it('assert that an array containing all items in cart is returned', function() {
+        assert.typeOf(cart.getItemCollection(), 'array');
+    })
+
 
 
 })
