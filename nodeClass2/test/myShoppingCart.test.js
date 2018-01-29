@@ -13,7 +13,7 @@ beforeEach(function() {
 })
 
 describe('ItemsCart', function() {
-    it('assert that an item has a name', () => {
+    it('assert that an item has a name', function() {
         assert.typeOf(item.name, 'string');
         assert.equal(item.name, 'lettuce');
     })
@@ -42,6 +42,13 @@ describe('ShoppingCart', function() {
         assert.equal(currentItems.name, 'lettuce');
     });
 
+    it('assert that function returns the number of items in the cart', function() {
+        assert.typeOf(cart.getTotal(), 'number');
+        assert.equal(cart.getTotal(), 0);
+        cart.addOneItem(item);
+        assert.equal(cart.getTotal(), 1);
+    });
+
 
 
 })
@@ -65,27 +72,27 @@ const { Item, getCart, addItem } = require('../cart')
 
 let testPost;
 
-before(() => {
+before(function() {
 console.log(">>>>>>>>>>>>>>>>>>>>>>>>>>")
     // testPost = new Post({ name: "TESTING" });
     // return testPost.save();
 });
 
-beforeEach(() => {
+beforeEach(function() {
 console.log('--------------------------');
 })
 
-after(() => {
+after(function() {
 console.log("<<<<<<<<<<<<<<<<<<<<<<<<<<");
 // return testPost.remove();
 });
 
-describe('testing Shopping Cart items', () => {
-beforeEach(() => {
+describe('testing Shopping Cart items', function() {
+beforeEach(function() {
     console.log('........................');
 })
 
-it('Should create a new Item with name and price', () => {
+it('Should create a new Item with name and price', function() {
     const item = new Item('Apple', 1.99)
     assert(item.name).to.be.a('string');
     assert(item.price).to.be.a('number');
@@ -93,7 +100,7 @@ it('Should create a new Item with name and price', () => {
     assert(item.price).to.be.equal(1.99)
 });
 
-it('Should return an array containing all items in cart', () => {
+it('Should return an array containing all items in cart', function() {
     const cart = getCart();
     assert(cart).to.be.a('array');
     assert(cart).to.have.lengthOf(0);
@@ -101,7 +108,7 @@ it('Should return an array containing all items in cart', () => {
     assert(cart).to.have.lengthOf(1);
 });
 
-it('Should add a new item to the shopping cart', () => {
+it('Should add a new item to the shopping cart', function() {
     const cart = getCart();
     addItem("apple", 5)
     const cart2 = getCart()
@@ -118,18 +125,18 @@ it('Should remove an item when its count is 0');
 it('Should return the total cost of all items in the cart');
 })
 
-describe('testing posts', () => {
-beforeEach(() => {
+describe('testing posts', function() {
+beforeEach(function() {
     console.log('===========================');
 })
-it('should fetch an array of posts', () => {
+it('should fetch an array of posts', function() {
 
 });
 it('should add a post');
 it('should remove a post');
 });
 
-describe('testing users', () => {
+describe('testing users', function() {
 it('should fetch an array of users');
 it('should add a user');
 it('should remove a user');
