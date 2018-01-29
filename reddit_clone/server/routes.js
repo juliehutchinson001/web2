@@ -10,12 +10,6 @@ routes.use(express.static("public"));
 
 routes.use(bodyPser.urlencoded({ extended: true }));
 
-routes.get("./posts", function(req, res) {
-    res.json({
-        message: working
-    });
-});
-
 require('./controllers/home')(routes);
 
 require('./controllers/post_new')(routes);
