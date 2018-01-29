@@ -1,15 +1,27 @@
-let app = require('./server');
+let express = require("express");
 
-app.set("view engine", "ejs");
+const routes = express();
 
-app.use(express.static("public"));
+let bodyPser = require("body-parser");
 
-app.use(bodyPser.urlencoded({ extended: true }));
+routes.set("view engine", "ejs");
 
-require('./controllers/home')(app);
+routes.use(express.static("public"));
 
-require('./controllers/post_new')(app);
+routes.use(bodyPser.urlencoded({ extended: true }));
 
-require('./controllers/posts')(app);
+routes.get("./posts", function(req, res) {
+    res.json({
+        message: working
+    });
+});
 
-require('./controllers/show')(app);
+require('./controllers/home')(routes);
+
+require('./controllers/post_new')(routes);
+
+require('./controllers/posts')(routes);
+
+require('./controllers/show')(routes);
+
+module.exports = { routes };
