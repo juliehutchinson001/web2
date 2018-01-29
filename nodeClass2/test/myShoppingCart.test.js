@@ -64,6 +64,22 @@ describe('ShoppingCart', function() {
         assert.equal(item.quantity, 2);
     });
 
+    it('assert an item is removed when its count is 0', function() {
+        assert.equal(cart.totalQuantityItems(), 0);
+
+        cart.addOneItem(item);
+        assert.equal(cart.totalQuantityItems(), 1);
+
+        cart.addOneItem(anotherItem);
+        assert.equal(cart.totalQuantityItems(), 2);
+
+        cart.removeOneItem(item);
+        assert.equal(cart.totalQuantityItems(), 1);
+
+        cart.removeOneItem(anotherItem);
+        assert.equal(cart.totalQuantityItems(), 0);
+    });
+
 
 
 })
