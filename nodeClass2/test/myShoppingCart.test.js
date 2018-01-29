@@ -49,6 +49,21 @@ describe('ShoppingCart', function() {
         assert.equal(cart.getTotal(), 1);
     });
 
+    // Stretch challenges
+    it('assert the count of items in the cart', function() {
+        assert.equal(cart.totalQuantityItems(), 0);
+
+        cart.addOneItem(item);
+        assert.equal(cart.totalQuantityItems(), 1);
+
+        assert.equal(item.quantity, 1);
+
+        cart.increaseItem(item)
+        assert.equal(cart.totalQuantityItems(), 2);
+
+        assert.equal(item.quantity, 2);
+    });
+
 
 
 })
