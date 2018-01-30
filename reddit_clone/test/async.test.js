@@ -11,11 +11,17 @@ const agent = chai.request.agent(app); // set the request agent to use your expr
 
 // const User = require('../models/user');
 // console.log(require('../models/post'))
-const Post = require('..../server/models/post');
+const Post = require('../server/models/post');
 
 
 
-it("Should return an array of posts", );
+it("Should return an array of posts", (done) => {
+    agent.get('./post').send().end((err, res) => {
+        expect(err).to.be.null;
+        expect(res).to.have.status(200)
+        done()
+    })
+});
 it("Should add a new post");
 it("Should fetch a post with valid properties");
 it("Should create a new user");
