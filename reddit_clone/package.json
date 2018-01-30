@@ -2,7 +2,7 @@
     "name": "reddit_clone",
     "version": "1.0.0",
     "description": "Clone of Reddit Website",
-    "main": "server.js",
+    "main": "./server/server.js",
     "scripts": {
         "test": "mocha"
     },
