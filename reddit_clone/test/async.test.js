@@ -10,7 +10,6 @@ chai.use(chaiHTTP); // Tell chai to user chaiHTTP
 const agent = chai.request.agent(app); // set the request agent to use your express app
 
 // const User = require('../models/user');
-// console.log(require('../models/post'))
 const Post = require('../server/models/post');
 
 

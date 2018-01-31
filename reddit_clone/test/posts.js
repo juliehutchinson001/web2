@@ -1,9 +1,11 @@
 let chai = require('chai');
+const app = require('../server/server').app // Import server.js
 const chaiHttp = require('chai-http');
 let expect = chai.expect;
 
 chai.use(chaiHttp);
 
+const agent = chai.request.agent(app); // set the request agent to use your express app
 const Post = require('../server/models/post');
 
 describe('Posts', function() {
