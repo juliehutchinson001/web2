@@ -7,10 +7,18 @@
                     <% for (post of posts) { %>
                     <li class="list-group-item">
                         <div class="lead">
-                            <a><%= post.title %></a>
-                            <a href="/posts/<%= post.id %>" target="_blank">
+                            <div class="text-right">
+                                <a href="/n/<%= post.subreddit %>">
+                                    <%= post.subreddit %>
+                                </a>
+                            </div>
+                            <a href="/posts/<%=post.id%>" class='lead'>
+                                <%= post.title%>
+                            </a>
                         </div>
-                            <%= post.url %></a>
+                        <a href="<%= post.url %>" target="_blank">                                
+                            <%= post.url %>
+                        </a>
                     </li>
                     <% } %>
                 </ul>
