@@ -9,7 +9,7 @@ module.exports = function(app) {
         const user = new User(req.body);
 
         user.save().then(function(user) {
-            res.redirect('/')
+            res.redirect('/posts')
         }).catch(function(err) {
             console.log(err.message);
         });
