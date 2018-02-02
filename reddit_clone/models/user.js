@@ -1,5 +1,4 @@
 const mongoose = require('mongoose');
-// Bcrypt: Password encryption library installed using npm
 const bcrypt = require('bcrypt')
 const Schema = mongoose.Schema;
 
@@ -10,7 +9,6 @@ const UserSchema = new Schema({
     username: { type: String, required: true }
 });
 
-// UserSchema methods
 
 UserSchema.methods.encryptPassword = function(plainTextPassword) {
     if (!plainTextPassword || typeof plainTextPassword != "string") {
