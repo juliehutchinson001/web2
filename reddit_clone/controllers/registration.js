@@ -1,17 +1,6 @@
-const User = require('../models/user');
-
 module.exports = function(app) {
-    app.get('/register', (req, res) => {
-        res.render('register');
-    });
-
-    app.post('/register', function(req, res) {
-        const user = new User(req.body);
-
-        user.save().then(function(user) {
-            res.redirect('/posts')
-        }).catch(function(err) {
-            console.log(err.message);
-        });
-    });
+    app.get('/signup', function(req, res) {
+        const thisUser = req.user;
+        res.render('signup', { pageTitle: 'Signup', thisUser: thisUser })
+    })
 }
