@@ -1,6 +1,6 @@
 let Post = require('../models/post')
 
-module.exports = app => {
+module.exports = function(app) {
     app.post('/posts', (req, res) => {
         // add post to database
         let post = new Post(req.body);
