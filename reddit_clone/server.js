@@ -60,6 +60,8 @@ require('./controllers/logout')(app)
 
 require('./controllers/login')(app)
 
+require('./controllers/login_form')(app)
+
 //running the instance of express
 app.listen("3000", function() {
     console.log("listening on port 3000");
