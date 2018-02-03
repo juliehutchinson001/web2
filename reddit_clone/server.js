@@ -40,27 +40,27 @@ app.use(express.static("public"));
 
 app.use(bodyPser.urlencoded({ extended: true }));
 
+require('./controllers/comments')(app)
+
 require('./controllers/home')(app);
+
+require('./controllers/login_form')(app)
+
+require('./controllers/login')(app)
+
+require('./controllers/logout')(app)
 
 require('./controllers/post_new')(app);
 
 require('./controllers/posts')(app);
 
-require('./controllers/show')(app);
-
-require('./controllers/subreddit')(app)
-
-require('./controllers/comments')(app)
-
 require('./controllers/registration')(app)
 
-require('./controllers/signup')(app)
+require('./controllers/show')(app);
 
-require('./controllers/logout')(app)
+require('./controllers/signup')(app);
 
-require('./controllers/login')(app)
-
-require('./controllers/login_form')(app)
+require('./controllers/subreddit')(app)
 
 //running the instance of express
 app.listen("3000", function() {
