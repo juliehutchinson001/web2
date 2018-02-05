@@ -6,23 +6,63 @@
         console.log("Reading in Data");
         return MOCK_DATA.json()
     }).then(function(json) {
-        console.log("Convertion of Data to JSON")
-        return json
-    }).then(function(obj) {
-        console.log("Removal of Duplicates")
-        return _.uniqBy(obj, 'name');
-    }).then(function(uniqueData) {
-        console.log("Sorting By Category...")
-        return _.sortBy(uniqueData, 'category');
-    }).then(function(sortedData) {
-        console.log("Chunking Data into Pairs of 10");
-        console.log("Data Before Chunk");
-        console.log(sortedData);
-        console.log("Data After Chunk");
-        console.log(_.chunk(sortedData, 10))
+        console.log("Convertion of Data to JSON");
+        handleData(json)
     }).catch(function(err) {
         console.log(err);
     });
+
+
+    function handleData(data) {
+        var obj = JSON.parse(json);
+
+        function duplicateRemoval() {
+            var uniqueData = _.uniqBy(obj, 'name');
+
+            function sortedNonRepeatedData() {
+                console.log("Sorting By Category");
+                var sortedData = _.sortBy(uniqueData, 'category');
+
+                function FinalData() {
+                    console.log("Chunking Data into Pairs of 5");
+                    console.log("Data Before Chunk");
+                    console.log(sortedData);
+                    console.log("Data After Chunk");
+                    console.log(_.chunk(sortedData, 5))
+                }
+
+            }
+
+        }
+
+    }
+
+
+    /* Solution 2
+    fetch('MOCK_DATA.json').then(function(MOCK_DATA) {
+            console.log("Reading in Data");
+            return MOCK_DATA.json()
+        }).then(function(json) {
+            console.log("Convertion of Data to JSON")
+            handleData(json)
+            // return json
+        }).then(function(obj) {
+            console.log("Removal of Duplicates")
+            return _.uniqBy(obj, 'name');
+        }).then(function(uniqueData) {
+            console.log("Sorting By Category...")
+            return _.sortBy(uniqueData, 'category');
+        }).then(function(sortedData) {
+            console.log("Chunking Data into Pairs of 10");
+            console.log("Data Before Chunk");
+            console.log(sortedData);
+            console.log("Data After Chunk");
+            console.log(_.chunk(sortedData, 10))
+        }).catch(function(err) {
+            console.log(err);
+        });
+
+    */
 
 
 
