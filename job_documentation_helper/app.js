@@ -1,8 +1,9 @@
 const express = require('express')
 const app = express()
 
+//route extended to render home.handlebars
 app.get('/', (req, res) => {
-    res.send('Hello World!')
+    res.render('home', { msg: 'Job Documentation Helper' });
 })
 
 app.listen(3000, () => {
