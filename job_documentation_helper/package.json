@@ -1,19 +1,24 @@
 {
-    "name": "final_project",
-    "version": "1.0.0",
-    "description": "\"job search site helper\"",
-    "main": "index.js",
-    "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1"
-    },
-    "repository": {
-        "type": "git",
-        "url": "git+https://github.com/juliehutchinson001/web2.git"
-    },
-    "author": "Julie Hutchinson",
-    "license": "ISC",
-    "bugs": {
-        "url": "https://github.com/juliehutchinson001/web2/issues"
-    },
-    "homepage": "https://github.com/juliehutchinson001/web2#readme"
+  "name": "job_documentation_helper",
+  "version": "1.0.0",
+  "description": "\"job search helper project\"",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/juliehutchinson001/web2.git"
+  },
+  "author": "Julie Hutchinson",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/juliehutchinson001/web2/issues"
+  },
+  "homepage": "https://github.com/juliehutchinson001/web2#readme",
+  "dependencies": {
+    "express": "^4.16.2",
+    "express-handlebars": "^3.0.0",
+    "nodemon": "^1.14.12"
+  }
 }
