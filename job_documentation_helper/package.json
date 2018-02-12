@@ -1,0 +1,19 @@
+{
+  "name": "final_project",
+  "version": "1.0.0",
+  "description": "\"job search site helper\"",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/juliehutchinson001/final_project_job_helper.git"
+  },
+  "author": "Julie Hutchinson",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/juliehutchinson001/final_project_job_helper/issues"
+  },
+  "homepage": "https://github.com/juliehutchinson001/final_project_job_helper#readme"
+}
