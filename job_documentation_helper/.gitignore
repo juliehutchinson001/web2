@@ -4,3 +4,4 @@ bin/
 /bin
 */bin
 node_modules
+.vscode/
