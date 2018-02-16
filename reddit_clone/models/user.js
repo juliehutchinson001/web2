@@ -8,7 +8,7 @@ const UserSchema = new Schema({
     password: { type: String, select: false, required: true },
     username: { type: String, required: true },
     posts: [{ type: Schema.Types.ObjectId, ref: 'Post' }],
-    comments: [{ type: Schema.Types.ObjectId, ref: 'Comment' }]
+    comments: [{ type: Schema.Types.ObjectId, ref: 'Comments' }]
 });
 
 UserSchema.pre('save', function(next) {
