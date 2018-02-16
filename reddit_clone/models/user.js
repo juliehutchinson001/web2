@@ -17,8 +17,8 @@ UserSchema.pre('save', function(next) {
     if (!this.createdAt) {
         this.createdAt = now;
     }
-    bcrypt.genSalt(10, (err, salt) => {
-        bcrypt.hash(this.password, salt, (err, hash) => {
+    bcrypt.genSalt(10, function(err, salt) {
+        bcrypt.hash(this.password, salt, function(err, hash) {
             this.password = hash;
             next();
         });
@@ -27,7 +27,7 @@ UserSchema.pre('save', function(next) {
 });
 
 UserSchema.methods.comparePassword = function(password, done) {
-    bcrypt.compare(password, this.password, (err, isMatch) => {
+    bcrypt.compare(password, this.password, function(err, isMatch) {
         done(err, isMatch);
     });
 };
