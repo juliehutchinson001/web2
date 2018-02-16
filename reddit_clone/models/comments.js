@@ -18,4 +18,4 @@ CommentSchema.pre('save', function(next) {
     next();
 });
 
-module.exports = mongoose.model('Comment', CommentSchema);
+module.exports = mongoose.model('Comments', CommentSchema);

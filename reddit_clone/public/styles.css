@@ -1,3 +1,43 @@
 body {
     background-color: red;
 }
+
+
+/* <!DOCTYPE html>
+<html lang="en">
+  <head>
+      <title>Profile</title>
+      <link rel="stylesheet" href="/static/styles.css">
+      <label for=""></label>
+  </head>
+  <body>
+      <div class="container">
+          <div id="header">
+              <ul class="nav-bar">
+                <li><a href="#">Portfolio</a></li>
+                <li><a href="#">Search</a></li>
+                <li><a href="#">Dashboard</a></li>
+                <li><button>EDIT</button></li>
+              </ul>
+          </div>            
+          <div class="container-main"><label for="">Basic Info</label>
+            <main>
+              <div id="name-lastname">
+                <textarea name="First-LastName" id="name" placeholder="Full Name"></textarea>
+              </div>
+              <div id="profession">
+                <textarea name="Professional Title" id="profession" placeholder="Software Engineer"></textarea>
+              </div>
+              <div id="name-lastname">
+                      <textarea name="First-LastName" id="name" placeholder="Full Name"></textarea>
+              </div>
+            </main>
+          </div>
+          <div class="footer">
+            <p>About me</p>
+              <a href="www.linkedln.com">linkedln</a>
+              <a href="www.facebook.com">Facebook</a>
+          </div>
+      </div>
+  </body>
+</html> */
