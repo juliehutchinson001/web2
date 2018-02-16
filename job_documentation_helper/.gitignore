@@ -1,7 +1,0 @@
-*.DS_Store
-*/*.DS_Store
-bin/
-/bin
-*/bin
-node_modules
-.vscode/
