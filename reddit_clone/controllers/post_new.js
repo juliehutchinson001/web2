@@ -1,5 +1,10 @@
-module.exports = function(app) {
-    app.get("/posts/new", function(req, res) {
-        res.render("new_form", { pageTitle: 'Reddit_Clone/New_Post' });
+module.exports = app => {
+    app.get('/posts/new', (req, res) => {
+        const currentUser = req.user;
+        if (currentUser) {
+            res.render('new', { pageTitle: 'Reddit Clone/new post', currentUser: currentUser })
+        } else {
+            return res.status(401).send({ message: 'UNAUTHORIZED' }); // Unauthorized
+        }
     })
 }
