@@ -7,7 +7,7 @@ const CommentSchema = new Schema({
     date: Date
 });
 
-var BlogPost = new Schema({
+const BlogPost = new Schema({
     author: ObjectId,
     title: String,
     body: String,
@@ -30,4 +30,5 @@ CommentSchema.pre('save', function(next) {
     next();
 });
 
-module.exports = mongoose.model('Comments', CommentSchema);
+// module.exports = mongoose.model('Comments', CommentSchema);
+module.exports = mongoose.model('BlogPost', BlogPost);
