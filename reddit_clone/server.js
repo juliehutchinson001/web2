@@ -1,23 +1,11 @@
 const cookieParser = require('cookie-parser');
 const bodyPser = require('body-parser');
 const jwt = require('jsonwebtoken');
-const express = require('express');
-
-require('dotenv').config();
-
-//Import the mongoose module
 let mongoose = require('mongoose');
-
-let app = express();
+const express = require('express');
+require('dotenv').config();
+const app = express();
 app.use(cookieParser());
-
-mongoose.connect('mongodb://localhost/27017', function() {
-    console.log("connected to mongodb...");
-});
-
-mongoose.set('debug', true);
-mongoose.connection.on('error', console.error.bind(console, 'MongoDB connection Error:'))
-
 
 const authentic = (req, res, next) => {
     console.log("authentication in progress");
@@ -33,12 +21,14 @@ const authentic = (req, res, next) => {
 }
 app.use(authentic);
 
-
 app.set("view engine", "ejs");
-
 app.use(express.static("public"));
-
 app.use(bodyPser.urlencoded({ extended: true }));
+
+mongoose.connect('mongodb://localhost/27017');
+mongoose.set('debug', true);
+mongoose.connection.on('error', console.error.bind(console, 'MongoDB connection Error:'))
+
 
 require('./controllers/comments')(app)
 
