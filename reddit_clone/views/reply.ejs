@@ -1,0 +1,15 @@
+<% include partials/header %>
+<div>
+  <div>
+    <form class="form" action="/posts/{{postId}}/comments/{{commentId}}/replies" method="post">
+      <p>
+        <textarea name="content" id="reply-content" placeholder="Reply"></textarea>
+      </p>
+      <p class='form-submit-container'>
+        <input type="submit">
+      </p>
+    </form>
+  </div>
+</div>
+
+<% include partials/footer %>
