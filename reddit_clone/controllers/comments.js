@@ -11,7 +11,6 @@ module.exports = function(app) {
         var userSaved;
         // SAVE INSTANCE OF Comment MODEL TO DB
         comment.save().then(function(comment) {
-            console.log("1 ***************************************")
             return User.findById(req.user._id);
         }).then(function(user) {
             user.comments.unshift(comment);
