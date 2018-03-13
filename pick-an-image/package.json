@@ -1,7 +1,7 @@
 {
-  "name": "job_documentation_helper",
+  "name": "pick-an-image",
   "version": "1.0.0",
-  "description": "\"job search helper project\"",
+  "description": "\"rate a picture\"",
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -17,8 +17,8 @@
   },
   "homepage": "https://github.com/juliehutchinson001/web2#readme",
   "dependencies": {
+    "ejs": "^2.5.7",
     "express": "^4.16.2",
-    "express-handlebars": "^3.0.0",
     "nodemon": "^1.14.12"
   }
 }
