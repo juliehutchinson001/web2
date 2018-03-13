@@ -16,16 +16,8 @@ app.get('/', (req, res) => {
     res.render('home', { msg: 'Job Documentation Helper' });
 })
 
-app.listen(3000, () => {
-    console.log('App listening on port 3000!')
+//start the server
+port = 3000;
+app.listen(port, () => {
+    console.log('App listening on port ' + port);
 })
-
-//initialize handlebars in project
-var exphbs = require('express-handlebars');
-
-
-// OUR MOCK ARRAY OF PROJECTS
-let reviews = [
-    { title: "Great Review" },
-    { title: "Next Review" }
-]
