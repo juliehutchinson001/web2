@@ -1,5 +1,9 @@
 const express = require('express');
 const path = require('path');
+const mongoose = require('mongoose');
+
+// Connect to db
+mongoose.connect('mongodb://localhost/cmscart');
 
 //init app
 const app = express()
