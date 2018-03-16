@@ -33,10 +33,20 @@
         <td>$<%= sub %></td>
     </tr>
     <% }); %>
+    <tr>
+        <td colspan="6" align="right"><b>Total: </b> $<%= parseFloat(total).toFixed(2) %></td>
+    </tr>
+    <tr>
+        <td colspan="5" align="right">
+            <a class="clearcart btn btn-danger" href="/cart/clear">Clear cart</a>
+        </td>
+        <td colspan="5" align="right">
+            <a class="btn btn-primary buynow" href="#">Buy now</a>
+        </td>
+    </tr>
     
-        
-});
-    
-</script>
+</table>
+
+
 
 <% include partials/footer %>
