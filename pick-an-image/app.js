@@ -23,7 +23,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 //route extended to render home.ejs
 app.get('/', (req, res) => {
-    res.render('home', { msg: 'Pick An Image' });
+    res.render('index', {title: 'Pick An Image' });
 })
 
 //start the server
