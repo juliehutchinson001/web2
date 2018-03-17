@@ -4,6 +4,13 @@
 <a href="/admin/products" class="btn btn-primary">Back to all products</a>
 <br><br>
 
-
+<form method="post" action="/admin/products/edit-product/<%= id %>" enctype="multipart/form-data">
+    
+    <div class="form-group">
+        <label for="">Title</label>
+        <input type="text" class="form-control" name="title" value="<%= title %>" placeholder="Title">
+    </div>
+    
+    
 
 <%- include('../partials/adminfooter') %>
